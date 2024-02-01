@@ -19,13 +19,7 @@ package com.thoughtworks.qdox.model.impl;
  * under the License.
  */
 
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import com.thoughtworks.qdox.library.ClassLibrary;
 import com.thoughtworks.qdox.model.BeanProperty;
@@ -589,7 +583,7 @@ public class DefaultJavaClass
         {
             for ( JavaField field : getFields() )
             {
-                if ( field.isEnumConstant() )
+                if ( Objects.nonNull(field) && field.isEnumConstant() )
                 {
                     result.add( field );
                 }
